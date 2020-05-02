@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29920.165
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SI642_BonoCorporativo", "SI642_BonoCorporativo\SI642_BonoCorporativo.csproj", "{8AAA51ED-C02C-452E-9EBA-BEB203987F01}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8AAA51ED-C02C-452E-9EBA-BEB203987F01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AAA51ED-C02C-452E-9EBA-BEB203987F01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AAA51ED-C02C-452E-9EBA-BEB203987F01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AAA51ED-C02C-452E-9EBA-BEB203987F01}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5A55208E-E52C-4367-93AF-CABDD6E4B4C5}
+	EndGlobalSection
+EndGlobal
