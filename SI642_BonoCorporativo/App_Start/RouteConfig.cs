@@ -16,7 +16,7 @@ namespace SI642_BonoCorporativo
 			routes.MapRoute(
 				name: "Default",
 				url: "{controller}/{action}/{id}",
-				defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+				defaults: new { controller = "Transactions", action = "Bono_Corporative", id = UrlParameter.Optional }
 			);
 		}
 	}

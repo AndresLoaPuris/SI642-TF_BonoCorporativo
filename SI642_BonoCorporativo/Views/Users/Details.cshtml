@@ -1,0 +1,62 @@
+﻿@model SI642_BonoCorporativo.Models.User
+
+@{
+    ViewBag.Title = "Details";
+}
+
+    <div class="container-fluid">
+
+
+
+        <br />
+        <!-- Content Row -->
+        <div class="row">
+            <div class="col-xl-4 col-md-6 mb-4">
+                <div class="card border-left-success shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text font-weight-bold text-success text-uppercase mb-1">Nombres</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">@Model.Name</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-4 col-md-6 mb-4">
+                <div class="card border-left-success shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text font-weight-bold text-success text-uppercase mb-1">Apellidos</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">@Model.FatherLastName @Model.MotherLastName</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-xl-4 col-md-6 mb-4">
+                <div class="card border-left-success shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text font-weight-bold text-success text-uppercase mb-1">DNI</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">@Model.DNI</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        </div>
+<br />
+        <p>
+            @Html.ActionLink("Editar Perfil", "Edit", new { id = Model.Id }, htmlAttributes: new { @class = "btn btn-primary" })
+        </p>

@@ -1,0 +1,94 @@
+﻿@model SI642_BonoCorporativo.Models.Transaction
+
+@{
+    ViewBag.Title = "Create";
+    
+}
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4><strong>Bono Corporativo</strong></h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group row">
+        <div class="col-sm-4 mb-2">
+            @Html.LabelFor(model => model.FaceValue, htmlAttributes: new { @class = "control-label col-md-5" , @style = "font-weight: bold;" })
+            @Html.EditorFor(model => model.FaceValue, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.FaceValue, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="col-sm-4 mb-2">
+            @Html.LabelFor(model => model.CommercialValue, htmlAttributes: new { @class = "control-label col-md-5", @style = "font-weight: bold;" })
+            @Html.EditorFor(model => model.CommercialValue, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.CommercialValue, "", new { @class = "text-danger" })
+
+        </div>
+
+        <div class="col-sm-3 mb-2">
+            @Html.LabelFor(model => model.CoinType_Id, "Tipo de Moneda", htmlAttributes: new { @class = "control-label col-md-7" , @style = "font-weight: bold;" })
+            @Html.DropDownList("CoinType_Id", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.CoinType_Id, "", new { @class = "text-danger" })
+
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-md-5 mb-2">
+            @Html.LabelFor(model => model.DateIssue, htmlAttributes: new { @class = "control-label col-md-5" , @style = "font-weight: bold;" })
+            @Html.EditorFor(model => model.DateIssue, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+            @Html.ValidationMessageFor(model => model.DateIssue, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-6 mb-2">
+            @Html.LabelFor(model => model.Years, htmlAttributes: new { @class = "control-label col-md-5", @style = "font-weight: bold;" })
+            @Html.EditorFor(model => model.Years, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Years, "", new { @class = "text-danger" })
+
+        </div>
+    </div>
+
+
+
+    <div class="form-group row">
+        <div class="col-md-5 mb-2">
+            @Html.LabelFor(model => model.PaymentFrequency_Id, "Frecuencia de pago", htmlAttributes: new { @class = "control-label col-md-5" , @style = "font-weight: bold;" })
+            @Html.DropDownList("PaymentFrequency_Id", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.PaymentFrequency_Id, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-6 mb-2">
+            @Html.LabelFor(model => model.Method_Id, "Método", htmlAttributes: new { @class = "control-label col-md-5" , @style = "font-weight: bold;" })
+            @Html.DropDownList("Method_Id", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Method_Id, "", new { @class = "text-danger" })
+
+        </div>
+    </div>
+
+
+
+    <div class="form-group row">
+        <div class="col-md-5 mb-2">
+            @Html.LabelFor(model => model.RateType_Id, "Tipo de Tasa", htmlAttributes: new { @class = "control-label col-md-5" , @style = "font-weight: bold;" })
+            @Html.DropDownList("RateType_Id", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.RateType_Id, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-6 mb-2">
+            @Html.LabelFor(model => model.InterestRate, htmlAttributes: new { @class = "control-label col-md-5" , @style = "font-weight: bold;" })
+            @Html.EditorFor(model => model.InterestRate, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.InterestRate, "", new { @class = "text-danger" })
+
+        </div>
+    </div>
+        <br />
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Calcular" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

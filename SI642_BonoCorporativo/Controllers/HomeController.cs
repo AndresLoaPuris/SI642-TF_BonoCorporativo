@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace SI642_BonoCorporativo.Controllers
 {
+	[Authorize]
 	public class HomeController : Controller
 	{
 		public ActionResult Index()

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="88366f33ff3f4978a3c72fc2f462ea93" Name="Diagram1">
+        <EntityTypeShape EntityType="SI642Model.CoinType" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SI642Model.Method" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SI642Model.PaymentFrequency" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="SI642Model.RateType" Width="1.5" PointX="0.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SI642Model.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SI642Model.Transaction" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SI642Model.User" Width="1.5" PointX="0.75" PointY="12.625" IsExpanded="true" />
+        <AssociationConnector Association="SI642Model.Transaction_CoinType" ManuallyRouted="false" />
+        <AssociationConnector Association="SI642Model.Transaction_Method" ManuallyRouted="false" />
+        <AssociationConnector Association="SI642Model.Transaction_PaymentFrequency" ManuallyRouted="false" />
+        <AssociationConnector Association="SI642Model.Transaction_RateType" ManuallyRouted="false" />
+        <AssociationConnector Association="SI642Model.TransactionHistory_User" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

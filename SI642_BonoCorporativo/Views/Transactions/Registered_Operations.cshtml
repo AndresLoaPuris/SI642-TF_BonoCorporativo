@@ -1,0 +1,93 @@
+﻿@model IEnumerable<SI642_BonoCorporativo.Models.Transaction>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Mis Operaciones</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" width="100%" cellspacing="0" style="color:black;">
+                <tr>
+                    @*<th></th>*@
+                    <th>
+                        @Html.DisplayNameFor(model => model.FaceValue)
+                    </th>
+                    <th>
+                        @Html.DisplayName("Tipo de Moneda")
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DateIssue)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Years)
+                    </th>
+                    <th>
+                        @Html.DisplayName("Frecuencia de pago")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Método")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Tipo de Tasa")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Tasa de Interés ( % )")
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TCEAIssuer)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TREAInvestor)
+                    </th>
+
+
+                </tr>
+
+                @foreach (var item in Model)
+                {
+            <tr>
+                @*<td>
+                    <a href="@Url.Action("Details_Operation","Transactions",new { id = item.Id })" title="Información Detallada" class="btn btn-circle btn-sm btn-primary"><i class="fas fa-info"></i></a>
+                </td>*@
+                <td>
+                    @Math.Round(item.FaceValue, 2)
+                </td>
+                <td>
+                    @item.CoinType.Name
+                </td>
+                <td>
+                    @item.DateIssue.ToString("dd MMMM yyyy")
+                </td>
+                <td>
+                    @item.Years
+                </td>
+                <td>
+                    @item.PaymentFrequency.Name
+                </td>
+                <td>
+                    @item.Method.Name
+                </td>
+                <td>
+                    @item.RateType.Name
+                </td>
+                <td>
+                    @Math.Round(item.InterestRate, 5)
+                </td>
+                <td>
+                    @Math.Round(item.TCEAIssuer, 2)
+                </td>
+                <td>
+                    @Math.Round(item.TREAInvestor, 2)
+                </td>
+
+            </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</div>

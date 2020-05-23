@@ -1,0 +1,171 @@
+﻿@model SI642_BonoCorporativo.Models.Transaction
+@using SI642_BonoCorporativo.Models;
+@using SI642_BonoCorporativo.Controllers;
+@{
+    SI642_Entities db = new SI642_Entities();
+    CoinType coinType = db.CoinType.Where(s => s.Id == Model.CoinType_Id).FirstOrDefault<CoinType>();
+    Method method = db.Method.Where(s => s.Id == Model.Method_Id).FirstOrDefault<Method>();
+    RateType rateType = db.RateType.Where(s => s.Id == Model.RateType_Id).FirstOrDefault<RateType>();
+    PaymentFrequency paymentFrequency = db.PaymentFrequency.Where(s => s.Id == Model.PaymentFrequency_Id).FirstOrDefault<PaymentFrequency>();
+}
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-3">
+                <div class="card shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text font-weight-bold text-dark text-uppercase mb-1">Valor Nominal</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">@Model.FaceValue</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-3">
+                <div class="card shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text font-weight-bold text-dark text-uppercase mb-1">Tipo de Moneda</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">@coinType.Name</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6 mb-3">
+                <div class="card shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text font-weight-bold text-dark text-uppercase mb-1">Fecha de Emisión</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">@Model.DateIssue.ToString("dd MMMM yyyy")</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-3">
+                <div class="card shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text font-weight-bold text-dark text-uppercase mb-1">Nº de Años</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">@Model.Years</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="row">
+
+            <!-- Earnings (Monthly) Card Example -->
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-3">
+                <div class="card shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text font-weight-bold text-dark text-uppercase mb-1">Frecuencia de pago</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">@paymentFrequency.Name</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-3">
+                <div class="card shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text font-weight-bold text-dark text-uppercase mb-1">Método</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">@method.Name</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-3">
+                <div class="card shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text font-weight-bold text-dark text-uppercase mb-1">Tipo de Tasa</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">@rateType.Name</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-3">
+                <div class="card shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text font-weight-bold text-dark text-uppercase mb-1">Tasa de Interés ( % )</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">@Model.InterestRate</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br />
+        <!-- Content Row -->
+        <div class="row">
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-5 col-md-6 mb-4">
+                <div class="card border-left-success shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text font-weight-bold text-success text-uppercase mb-1">TREA Bonista</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">@coinType.Name @Model.TREAInvestor</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-5 col-md-6 mb-4">
+                <div class="card border-left-success shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text font-weight-bold text-success text-uppercase mb-1">TCEA Emisor</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">@coinType.Name @Model.TCEAIssuer</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+<br />
+<p>
+    @Html.ActionLink("Realizar Otro Calculo", "Bono_Corporative", null, htmlAttributes: new { @class = "btn btn-primary" })
+</p>
