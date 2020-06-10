@@ -20,19 +20,19 @@ namespace SI642_BonoCorporativo.Models
         {
             this.Transaction = new HashSet<Transaction>();
         }
-    
+
         public int Id { get; set; }
         [Display(Name = "Nombres")]
         [Required(ErrorMessage = "Error: Debe ingresar el campo Nombres")]
-        [RegularExpression(@"[a-zA-ZñÑ\s]", ErrorMessage = "Error: Solo Texto")]
+        //[RegularExpression(@"[a-zA-ZñÑ\s]", ErrorMessage = "Error: Solo Texto")]
         public string Name { get; set; }
         [Display(Name = "Apellido Paterno")]
         [Required(ErrorMessage = "Error: Debe ingresar el campo Apellido Paterno")]
-        [RegularExpression(@"[a-zA-ZñÑ\s]", ErrorMessage = "Error: Solo Texto")]
+        //[RegularExpression(@"[a-zA-ZñÑ\s]", ErrorMessage = "Error: Solo Texto")]
         public string FatherLastName { get; set; }
         [Display(Name = "Apellido Materno")]
         [Required(ErrorMessage = "Error: Debe ingresar el campo Apellido Materno")]
-        [RegularExpression(@"[a-zA-ZñÑ\s]", ErrorMessage = "Error: Solo Texto")]
+        //[RegularExpression(@"[a-zA-ZñÑ\s]", ErrorMessage = "Error: Solo Texto")]
         public string MotherLastName { get; set; }
         [Display(Name = "DNI")]
         [Required(ErrorMessage = "Error: Debe ingresar el campo DNI")]
@@ -42,7 +42,7 @@ namespace SI642_BonoCorporativo.Models
         [Display(Name = "Contraseña")]
         [Required(ErrorMessage = "Error: Debe ingresar el campo Contraseña")]
         public string Password { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Transaction> Transaction { get; set; }
     }

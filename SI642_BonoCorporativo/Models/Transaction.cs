@@ -11,13 +11,13 @@ namespace SI642_BonoCorporativo.Models
 {
     using System;
     using System.Collections.Generic;
-	using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations;
 
-	public partial class Transaction
+    public partial class Transaction
     {
         public int Id { get; set; }
 
-        [Display(Name = "Valor Nominal",Prompt = "Ingresar Valor Nominal", Description = "Valor Nominal")]
+        [Display(Name = "Valor Nominal", Prompt = "Ingresar Valor Nominal", Description = "Valor Nominal")]
         [Required(ErrorMessage = "Error: Debe ingresar el campo Valor Nominal")]
         [Range(0.0, float.MaxValue)]
         public decimal FaceValue { get; set; }
@@ -57,7 +57,7 @@ namespace SI642_BonoCorporativo.Models
         public decimal TREAInvestor { get; set; }
         [Required]
         public int User_Id { get; set; }
-    
+
         public virtual CoinType CoinType { get; set; }
         public virtual Method Method { get; set; }
         public virtual PaymentFrequency PaymentFrequency { get; set; }

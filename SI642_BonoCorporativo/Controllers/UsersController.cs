@@ -13,7 +13,7 @@ namespace SI642_BonoCorporativo.Controllers
     [Authorize]
     public class UsersController : Controller
     {
-        private SI642_Entities db = new SI642_Entities();
+        private SI642Entities db = new SI642Entities();
 
         
         public ActionResult Details(int? id)

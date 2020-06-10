@@ -10,7 +10,7 @@ namespace SI642_BonoCorporativo.Controllers
 {
     public class AccountController : Controller
     {
-        private SI642_Entities db = new SI642_Entities();
+        private SI642Entities db = new SI642Entities();
         public static string Static_DNI { get; set; }
         // GET: Account
         public ActionResult Login()

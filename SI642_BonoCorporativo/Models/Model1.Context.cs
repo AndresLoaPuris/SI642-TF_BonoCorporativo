@@ -13,10 +13,10 @@ namespace SI642_BonoCorporativo.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SI642_Entities : DbContext
+    public partial class SI642Entities : DbContext
     {
-        public SI642_Entities()
-            : base("name=SI642_Entities")
+        public SI642Entities()
+            : base("name=SI642Entities")
         {
         }
     
@@ -29,7 +29,6 @@ namespace SI642_BonoCorporativo.Models
         public virtual DbSet<Method> Method { get; set; }
         public virtual DbSet<PaymentFrequency> PaymentFrequency { get; set; }
         public virtual DbSet<RateType> RateType { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Transaction> Transaction { get; set; }
         public virtual DbSet<User> User { get; set; }
     }
