@@ -1,9 +1,50 @@
-﻿@{
+﻿@using SI642_BonoCorporativo.Models;
+@using SI642_BonoCorporativo.Controllers;
+
+@{
     ViewBag.Title = "Home Page";
+    SI642Entities db = new SI642Entities();
+
 }
 
-<div class="jumbotron">
-    <h1>Las Finanzas son 80% mente y 20% dinero</h1>
-    <p class="lead">BONOS CORPORATIVOS</p>
-</div>
-
+  
+        <div class="container-fluid mt-5">
+           
+            <div class="alert alert-primary border-0 mb-4 mt-5 px-md-5">
+                <div class="position-relative">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col position-relative">
+                            <h2 class="text-primary">Bienvenido  @db.User.Where(s => s.DNI == AccountController.Static_DNI).FirstOrDefault().Name !</h2>
+                            <p class="text-gray-700">
+                                En nuestra Aplicación va a poder Calcular Bonos Corporativos en diferentes metodos como Americano, Alemán o
+                                Francés, en moneda Sol, Dólar Americano o Euro, así como para tasas nominales o
+                                efectivas.
+                            </p>
+                            
+                        </div>
+                        <div class="col d-none d-md-block text-right pt-3"><img class="img-fluid mt-n5" src="~/assets/img/drawkit-content-man-alt.svg" style="max-width: 25rem;" /></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-xl-6 mb-4">
+                    <div class="card bg-secondary o-visible mb-4">
+                        <div class="card-body">
+                            <h4 class="text-white">Disponibilidad</h4>
+                            <p class="text-white-50">Nuestra Aplicación se encuentra habilitado para Web y Movil para que nuestros usuarios puedan realizar los calculos en cualquier lugar.</p>
+                            <img class="float-left" src="~/assets/img/drawkit-developer-woman-flush.svg" style="width: 8rem; margin-left: -2.5rem; margin-bottom: -5.5rem;" />
+                        </div>
+                        <div class="card-footer bg-transparent pt-0 border-0 text-right"><a class="btn btn-primary" href="#!">Continue</a></div>
+                    </div>
+             
+                </div>
+                <div class="col-lg-6 col-xl-6 mb-4">
+                    <div class="card bg-primary o-visible mb-4">
+                        <div class="card-body">
+                            <h4 class="text-white">Usabilidad</h4>
+                            <p class="text-white-50">Nuestra Aplicación posee una Interfaz Grafica Intuita que va a permitir facilitar el uso de la App lo cual te permitira se ´más productivo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

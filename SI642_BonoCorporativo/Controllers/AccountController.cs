@@ -52,13 +52,14 @@ namespace SI642_BonoCorporativo.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult SignUp([Bind(Include = "Id,Name,FatherLastName,MotherLastName,DNI,Password")] User user)
         {
-            if (ModelState.IsValid)
+            
+            if (ModelState.IsValid && !db.User.Any(s => s.DNI == user.DNI))
             {
                 db.User.Add(user);
                 db.SaveChanges();
                 return RedirectToAction("Login");
             }
-
+            ModelState.AddModelError("", "DNI Existente");
             return View(user);
         }
 

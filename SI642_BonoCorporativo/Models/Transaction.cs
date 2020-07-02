@@ -58,6 +58,12 @@ namespace SI642_BonoCorporativo.Models
         [Required]
         public int User_Id { get; set; }
 
+        public double prima { get; set; }
+        public double cavali { get; set; }
+        public double colocacion { get; set; }
+        public double flotacion { get; set; }
+        public double estructuracion { get; set; }
+        public double cok { get; set; }
         public virtual CoinType CoinType { get; set; }
         public virtual Method Method { get; set; }
         public virtual PaymentFrequency PaymentFrequency { get; set; }
